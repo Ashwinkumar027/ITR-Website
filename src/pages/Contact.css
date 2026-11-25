@@ -1,0 +1,208 @@
+/* Contact Page Styles - Aionion Advisory */
+
+.contact-section {
+    padding: var(--spacing-16) 0 var(--spacing-24);
+    background: var(--color-gray-50);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-8);
+}
+
+.contact-form-card {
+    background: var(--color-white);
+    padding: var(--spacing-10);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.contact-form-card h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-4);
+    color: var(--color-gray-900);
+}
+
+.form-intro {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-8);
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+}
+
+.form-group label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-2);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-base);
+    background: var(--color-white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 74, 143, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-gray-400);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group optgroup {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-700);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.info-card {
+    background: var(--color-white);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3);
+    color: var(--color-gray-900);
+}
+
+.office-intro {
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-6);
+    line-height: 1.6;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.contact-method {
+    display: flex;
+    gap: var(--spacing-4);
+}
+
+.method-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0F2FE 100%);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.method-details h4 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-1);
+}
+
+.method-details p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-600);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Excellence Card */
+.excellence-card {
+    background: linear-gradient(135deg, #EEF2FF 0%, #fff1f1 100%);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--color-primary-100);
+}
+
+.excellence-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-5);
+}
+
+.advantage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.advantage-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    font-weight: var(--font-weight-medium);
+}
+
+.advantage-list li svg {
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: var(--spacing-6);
+    }
+
+    .info-card,
+    .excellence-card {
+        padding: var(--spacing-6);
+    }
+}
