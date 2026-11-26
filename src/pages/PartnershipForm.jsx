@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import RMBadge from "../components/RMBadge";
 import SalesRMSearch from "../components/SalesRMSearch";
 import PreConfirmationModal from "../components/PreConfirmationModal";
+import FileUploadWithPreview from "../components/FileUploadWithPreview";
 import { submitServiceForm } from "../api";
 import "./HUFForm.css"; // Reuse the proven, elegant form styling
 
@@ -279,18 +280,13 @@ const PartnershipForm = () => {
                         </div>
 
                         <div className="doc-upload-box">
-                            <h4 className="doc-upload-title">Office Address Proof (Optional for initial intake)</h4>
-                            <div className="file-input-group">
-                                <label>Upload Electricity Bill / Rent Agreement / Property Tax Receipt</label>
-                                <input
-                                    type="file"
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    onChange={(e) => setFiles(prev => ({ ...prev, office_address_proof: e.target.files[0] }))}
-                                />
-                                {files.office_address_proof && (
-                                    <span className="file-attached-pill">✓ {files.office_address_proof.name}</span>
-                                )}
-                            </div>
+                            <h4 className="doc-upload-title">Office Address Proof (with Interactive Preview)</h4>
+                            <FileUploadWithPreview
+                                label="Upload Electricity Bill / Rent Agreement / Property Tax Receipt"
+                                file={files.office_address_proof}
+                                onChange={(file) => setFiles(prev => ({ ...prev, office_address_proof: file }))}
+                                id="office-address-proof-upload"
+                            />
                         </div>
 
                         {/* Sales RM Dropdown */}
@@ -391,22 +387,22 @@ const PartnershipForm = () => {
                                     </div>
                                 </div>
 
-                                {/* Partner Document Uploads */}
+                                {/* Partner Document Uploads with Interactive Preview */}
                                 <div className="member-upload-row">
                                     <div className="member-upload-col">
-                                        <label>Upload PAN Card Copy</label>
-                                        <input
-                                            type="file"
-                                            accept=".pdf,.jpg,.jpeg,.png"
-                                            onChange={(e) => handlePartnerFileChange(index, "pan", e.target.files[0])}
+                                        <FileUploadWithPreview
+                                            label={`Partner ${index + 1} PAN Card Copy`}
+                                            file={partnerFiles[`partner_pan_${index}`] || null}
+                                            onChange={(file) => handlePartnerFileChange(index, "pan", file)}
+                                            id={`partner-pan-${index}`}
                                         />
                                     </div>
                                     <div className="member-upload-col">
-                                        <label>Upload Aadhaar Card Copy</label>
-                                        <input
-                                            type="file"
-                                            accept=".pdf,.jpg,.jpeg,.png"
-                                            onChange={(e) => handlePartnerFileChange(index, "aadhaar", e.target.files[0])}
+                                        <FileUploadWithPreview
+                                            label={`Partner ${index + 1} Aadhaar Card Copy`}
+                                            file={partnerFiles[`partner_aadhaar_${index}`] || null}
+                                            onChange={(file) => handlePartnerFileChange(index, "aadhaar", file)}
+                                            id={`partner-aadhaar-${index}`}
                                         />
                                     </div>
                                 </div>

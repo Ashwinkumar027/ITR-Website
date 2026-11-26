@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import RMBadge from "../components/RMBadge";
 import SalesRMSearch from "../components/SalesRMSearch";
 import PreConfirmationModal from "../components/PreConfirmationModal";
+import FileUploadWithPreview from "../components/FileUploadWithPreview";
 import { submitServiceForm } from "../api";
 import "./HUFForm.css";
 
@@ -315,33 +316,23 @@ const HUFForm = () => {
                             </div>
                         </div>
 
-                        {/* Document Uploads */}
+                        {/* Document Uploads with Instant Preview */}
                         <div className="doc-upload-box">
-                            <h4 className="doc-upload-title">Karta Document Attachments (Optional for instant intake)</h4>
+                            <h4 className="doc-upload-title">Karta Document Attachments (with Interactive Preview)</h4>
                             <div className="form-grid-2">
-                                <div className="file-input-group">
-                                    <label>Upload Karta PAN Card</label>
-                                    <input
-                                        type="file"
-                                        accept=".pdf,.jpg,.jpeg,.png"
-                                        onChange={(e) => setFiles(prev => ({ ...prev, karta_pan_attachment: e.target.files[0] }))}
-                                    />
-                                    {files.karta_pan_attachment && (
-                                        <span className="file-attached-pill">✓ {files.karta_pan_attachment.name}</span>
-                                    )}
-                                </div>
+                                <FileUploadWithPreview
+                                    label="Upload Karta PAN Card"
+                                    file={files.karta_pan_attachment}
+                                    onChange={(file) => setFiles(prev => ({ ...prev, karta_pan_attachment: file }))}
+                                    id="karta-pan-upload"
+                                />
 
-                                <div className="file-input-group">
-                                    <label>Upload Karta Aadhaar Card</label>
-                                    <input
-                                        type="file"
-                                        accept=".pdf,.jpg,.jpeg,.png"
-                                        onChange={(e) => setFiles(prev => ({ ...prev, karta_aadhaar_attachment: e.target.files[0] }))}
-                                    />
-                                    {files.karta_aadhaar_attachment && (
-                                        <span className="file-attached-pill">✓ {files.karta_aadhaar_attachment.name}</span>
-                                    )}
-                                </div>
+                                <FileUploadWithPreview
+                                    label="Upload Karta Aadhaar Card"
+                                    file={files.karta_aadhaar_attachment}
+                                    onChange={(file) => setFiles(prev => ({ ...prev, karta_aadhaar_attachment: file }))}
+                                    id="karta-aadhaar-upload"
+                                />
                             </div>
                         </div>
 
@@ -462,22 +453,22 @@ const HUFForm = () => {
                                     </div>
                                 </div>
 
-                                {/* Per-member uploads */}
+                                {/* Per-member uploads with Interactive Preview */}
                                 <div className="member-upload-row">
                                     <div className="member-upload-col">
-                                        <label>Upload PAN Copy</label>
-                                        <input
-                                            type="file"
-                                            accept=".pdf,.jpg,.jpeg,.png"
-                                            onChange={(e) => handleMemberFileChange(index, "pan", e.target.files[0])}
+                                        <FileUploadWithPreview
+                                            label={`Member ${index + 1} PAN Copy`}
+                                            file={memberFiles[`huf_pan_${index}`] || null}
+                                            onChange={(file) => handleMemberFileChange(index, "pan", file)}
+                                            id={`member-pan-${index}`}
                                         />
                                     </div>
                                     <div className="member-upload-col">
-                                        <label>Upload Aadhaar Copy</label>
-                                        <input
-                                            type="file"
-                                            accept=".pdf,.jpg,.jpeg,.png"
-                                            onChange={(e) => handleMemberFileChange(index, "aadhaar", e.target.files[0])}
+                                        <FileUploadWithPreview
+                                            label={`Member ${index + 1} Aadhaar Copy`}
+                                            file={memberFiles[`huf_aadhaar_${index}`] || null}
+                                            onChange={(file) => handleMemberFileChange(index, "aadhaar", file)}
+                                            id={`member-aadhaar-${index}`}
                                         />
                                     </div>
                                 </div>
