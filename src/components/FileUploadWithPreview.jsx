@@ -112,13 +112,13 @@ const FileUploadWithPreview = ({
                     </div>
 
                     <div className="file-meta">
-                        <div className="file-name-row">
-                            <span className="file-display-name" title={file.name}>
-                                {file.name}
-                            </span>
+                        <span className="file-display-name" title={file.name}>
+                            {file.name}
+                        </span>
+                        <div className="file-sub-row">
+                            <span className="file-display-size">{formatBytes(file.size)}</span>
                             <span className="file-ready-badge">✓ Attached</span>
                         </div>
-                        <span className="file-display-size">{formatBytes(file.size)}</span>
                     </div>
 
                     <div className="file-actions">
