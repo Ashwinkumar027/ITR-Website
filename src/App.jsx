@@ -20,6 +20,8 @@ import Section9 from './sections/Section9';
 import Section10 from './sections/Section10';
 import Section11 from './sections/Section11';
 import ITRSuccess from './pages/ITRSuccess';
+import HUFForm from './pages/HUFForm';
+import PartnershipForm from './pages/PartnershipForm';
 
 /**
  * AppContent handles the conditional rendering of Navbar/Footer
@@ -41,6 +43,12 @@ const AppContent = () => {
                 {/* Main Website Routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
+
+                {/* Corporate & Entity Intake Forms */}
+                <Route path="/services/huf-creation" element={<HUFForm />} />
+                <Route path="/huf-creation" element={<HUFForm />} />
+                <Route path="/services/partnership-registration" element={<PartnershipForm />} />
+                <Route path="/partnership-registration" element={<PartnershipForm />} />
 
                 {/* ITR Filing Routes - Integrated */}
                 <Route path="/itr-filing" element={<Section1 />} />

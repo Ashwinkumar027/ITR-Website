@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Services.css';
 
 const Services = () => {
@@ -12,6 +13,134 @@ const Services = () => {
                             Focus on the value and breadth of expertise rather than costs.
                             We deliver comprehensive solutions tailored to your business needs.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* 11 Online Client Intake & Advisory Services */}
+            <section className="service-section catalog-highlight-section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <span className="badge-highlight">Online Service Intake</span>
+                        <h2 className="section-title">Corporate & Financial Services Catalog</h2>
+                        <p className="section-subtitle">
+                            Direct CA-assisted registration, compliance, and tax advisory for trading firms and businesses.
+                        </p>
+                    </div>
+
+                    <div className="catalog-cards-grid">
+                        {/* 1. ITR Filing */}
+                        <div className="catalog-action-card featured">
+                            <div className="card-top-tag">Most Popular</div>
+                            <div className="catalog-icon">📊</div>
+                            <h3>Income Tax Filing (ITR)</h3>
+                            <p>End-to-end ITR preparation (ITR-1 to 7) with capital gains, F&O trading audit, and NRI tax exemptions.</p>
+                            <Link to="/itr-filing" className="btn-catalog-action primary">
+                                File ITR Online →
+                            </Link>
+                        </div>
+
+                        {/* 2. HUF Creation */}
+                        <div className="catalog-action-card highlighted">
+                            <div className="card-top-tag new-tag">New Service</div>
+                            <div className="catalog-icon">👨‍👩‍👧‍👦</div>
+                            <h3>HUF Creation</h3>
+                            <p>Establish a Hindu Undivided Family tax entity. Includes constitution deed drafting, PAN application, and Karta advisory.</p>
+                            <Link to="/services/huf-creation" className="btn-catalog-action accent">
+                                Apply for HUF Creation →
+                            </Link>
+                        </div>
+
+                        {/* 3. Partnership Registration */}
+                        <div className="catalog-action-card highlighted">
+                            <div className="card-top-tag new-tag">New Service</div>
+                            <div className="catalog-icon">🤝</div>
+                            <h3>Partnership Registration</h3>
+                            <p>Register your firm under Indian Partnership Act, 1932. Custom partnership deed drafting and registrar compliance.</p>
+                            <Link to="/services/partnership-registration" className="btn-catalog-action accent">
+                                Register Partnership Firm →
+                            </Link>
+                        </div>
+
+                        {/* 4. GST Registration */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">📑</div>
+                            <h3>GST Registration</h3>
+                            <p>New GST registration for proprietorship, partnership, and corporate entities with fast jurisdictional approval.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20GST%20Registration" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 5. GST Filing */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">📈</div>
+                            <h3>GST Monthly & Annual Filing</h3>
+                            <p>Monthly GSTR-1, GSTR-3B filings, input tax credit reconciliation, and GSTR-9 annual compliance.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20GST%20Filing" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 6. Tax Advisory */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">💡</div>
+                            <h3>Strategic Tax Advisory</h3>
+                            <p>Advanced tax planning for high-net-worth individuals, business restructuring, capital gains, and trust taxation.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Tax%20Advisory" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 7. Company Registration */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">🏢</div>
+                            <h3>Company Registration (Pvt Ltd / LLP)</h3>
+                            <p>Incorporate a Private Limited, LLP, or One Person Company with MCA, DIN, DSC, and MOA/AOA filing.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Company%20Registration" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 8. Book Keeping Services */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">📚</div>
+                            <h3>Book Keeping & Accounting</h3>
+                            <p>Day-to-day transaction ledger entry, bank reconciliations, accounts payable/receivable, and P&L reporting.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Book%20Keeping" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 9. Litigation Support */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">⚖️</div>
+                            <h3>Litigation & Scrutiny Support</h3>
+                            <p>Handling Income Tax notices (Section 143, 148), faceless assessment representations, and CIT appeals.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Litigation%20Support" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 10. Statutory Compliance */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">🛡️</div>
+                            <h3>Statutory & ROC Compliance</h3>
+                            <p>Annual ROC filings (MGT-7, AOC-4), director KYC, board resolutions, and mandatory statutory registrations.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Statutory%20Compliance" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
+
+                        {/* 11. Other Services */}
+                        <div className="catalog-action-card">
+                            <div className="catalog-icon">✨</div>
+                            <h3>Other Financial Services</h3>
+                            <p>Custom advisory, financial modeling, MSME/Udyam registration, and specialized certification services.</p>
+                            <a href="https://wa.me/919446416175?text=Hi%2C%20I%20am%20interested%20in%20Other%20Services" target="_blank" rel="noopener noreferrer" className="btn-catalog-action secondary">
+                                Inquire on WhatsApp →
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

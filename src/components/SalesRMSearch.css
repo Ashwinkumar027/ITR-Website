@@ -1,0 +1,233 @@
+/* src/components/SalesRMSearch.css */
+
+.sales-rm-search-container {
+    margin-bottom: 24px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+}
+
+.sales-rm-search-container:hover {
+    border-color: #cbd5e1;
+}
+
+.sales-rm-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.sales-rm-label span:first-child {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+.sales-rm-hint {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.rm-search-dropdown-wrapper {
+    position: relative;
+}
+
+.rm-search-input-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 14px;
+    gap: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.rm-search-input-box:focus-within {
+    border-color: #0066ff;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
+}
+
+.search-icon {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.rm-search-input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.92rem;
+    color: #1e293b;
+    background: transparent;
+}
+
+.search-clear-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0 4px;
+}
+
+.search-clear-btn:hover {
+    color: #475569;
+}
+
+.rm-options-list {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.rm-option-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s ease;
+    gap: 12px;
+}
+
+.rm-option-item:last-child {
+    border-bottom: none;
+}
+
+.rm-option-item:hover {
+    background: #f0f7ff;
+}
+
+.rm-avatar-sm {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #0066ff;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.rm-option-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rm-option-details .rm-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0f172a;
+}
+
+.rm-option-details .rm-sub {
+    font-size: 0.78rem;
+    color: #64748b;
+    display: flex;
+    gap: 6px;
+    margin-top: 1px;
+}
+
+.btn-select-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0066ff;
+    background: #e0edff;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.rm-option-empty {
+    padding: 14px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.btn-link-sm {
+    display: block;
+    margin: 6px auto 0;
+    background: none;
+    border: none;
+    color: #0066ff;
+    cursor: pointer;
+    font-size: 0.82rem;
+    text-decoration: underline;
+}
+
+/* Selected Card */
+.selected-rm-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #10b981;
+    border-radius: 8px;
+    padding: 10px 16px;
+    gap: 12px;
+}
+
+.selected-rm-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #10b981;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.selected-rm-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.selected-rm-name {
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+.selected-rm-meta {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: flex;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.btn-change-rm {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-change-rm:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}

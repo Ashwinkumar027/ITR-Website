@@ -132,9 +132,9 @@ const Home = () => {
                             iconColor="#10B981"
                         />
                         <ServiceCard
-                            title="Corporate Advisory & Secretarial"
-                            description="From 'Idea to Incorporation,' we manage the lifecycle of your business entity with strategic guidance."
-                            features={["Entity Registration (Pvt Ltd, LLP)", "Corporate Governance", "FEMA & RBI Compliance"]}
+                            title="Corporate Advisory & Registration"
+                            description="From 'Idea to Incorporation,' we manage the lifecycle of your business entity: HUF creation, partnership registration, and corporate compliance."
+                            features={["HUF Creation & Constitution Deed", "Partnership Registration (1932 Act)", "Pvt Ltd & LLP Incorporation"]}
                             link="/services"
                             bgColor="#FEF3F2"
                             iconColor="#F97316"

@@ -362,3 +362,147 @@
         font-size: var(--font-size-2xl);
     }
 }
+
+
+/* ==========================================================================
+   11 Corporate & Financial Services Catalog Styling
+   ========================================================================== */
+
+.catalog-highlight-section {
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 60px 0 80px;
+}
+
+.badge-highlight {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #0066ff;
+    background: #e0edff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.catalog-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.catalog-action-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.catalog-action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.catalog-action-card.featured {
+    border-color: #0066ff;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+}
+
+.catalog-action-card.highlighted {
+    border-color: #0284c7;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.card-top-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #0066ff;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-top-tag.new-tag {
+    background: #0284c7;
+}
+
+.catalog-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.catalog-action-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0a2540;
+    margin: 0 0 10px;
+}
+
+.catalog-action-card p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0 0 24px;
+    flex: 1;
+}
+
+.btn-catalog-action {
+    display: block;
+    text-align: center;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-catalog-action.primary {
+    background: #0066ff;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 102, 255, 0.25);
+}
+
+.btn-catalog-action.primary:hover {
+    background: #0052cc;
+    box-shadow: 0 6px 12px -2px rgba(0, 102, 255, 0.35);
+}
+
+.btn-catalog-action.accent {
+    background: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
+}
+
+.btn-catalog-action.accent:hover {
+    background: #0369a1;
+    box-shadow: 0 6px 12px -2px rgba(2, 132, 199, 0.35);
+}
+
+.btn-catalog-action.secondary {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-catalog-action.secondary:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}

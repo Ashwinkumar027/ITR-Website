@@ -2,42 +2,48 @@
 
 export const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 export const API_SUBMIT_URL = `${API_BASE_URL}/api/method/payu_frappe.api.submit_itr_details`;
+export const API_SALES_RMS_URL = `${API_BASE_URL}/api/method/payu_frappe.api.get_active_sales_rms`;
 
 /**
- * Common submission function used across different sections.
- * Frappe's orjson parser rejects raw JSON bodies from browsers.
- * Form-encoded data with a 'data' key is the correct approach — CSRF is disabled in site_config.
- * @param {Object} form - The form data object
- * @param {Object} files - The files object (optional)
- * @returns {Promise<Object>} - The JSON response from the server
+ * Fetch list of active Sales Relationship Managers for website dropdown.
  */
-export const submitForm = async (form, files) => {
-    console.log("--- NEW API.JS LOADED ---");
-    // Remove alert after testing, but keep it for this one test so the user knows cache is clear
-
-    // CACHE BUSTER: Force capitalize account_type
-    if (form.account_type) {
-        form.account_type = form.account_type.charAt(0).toUpperCase() + form.account_type.slice(1).toLowerCase();
-        if (form.account_type.toUpperCase() === "HUF") {
-            form.account_type = "HUF";
+export const fetchSalesRMs = async () => {
+    try {
+        const res = await fetch(`${API_SALES_RMS_URL}?t=${new Date().getTime()}`);
+        if (!res.ok) {
+            console.warn("Failed to fetch Sales RMs, using fallback list.");
+            return [];
         }
+        const data = await res.json();
+        return data.message || data || [];
+    } catch (err) {
+        console.warn("Error fetching Sales RMs:", err);
+        return [];
     }
+};
 
-    // Send as form-encoded with JSON string in 'data' key
-    // This is what Frappe's frappe.form_dict.get('data') reads on the backend
-    const params = new URLSearchParams();
-    params.append("data", JSON.stringify(form));
-
-    // Add cache buster to timestamp to force browser to not cache the POST request
+/**
+ * Universal submission function supporting multipart files and child table data.
+ * @param {Object} form - Form data object
+ * @param {Object} files - Dictionary of files (e.g. { karta_pan_attachment: file, huf_pan_0: file, ... })
+ * @returns {Promise<Object>} - JSON result from server
+ */
+export const submitServiceForm = async (form, files = {}) => {
     const cacheBustUrl = `${API_SUBMIT_URL}?t=${new Date().getTime()}`;
+    const formData = new FormData();
+    formData.append("data", JSON.stringify(form));
+
+    if (files) {
+        Object.entries(files).forEach(([key, file]) => {
+            if (file && file instanceof File) {
+                formData.append(key, file);
+            }
+        });
+    }
 
     const res = await fetch(cacheBustUrl, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "X-Frappe-CSRF-Token": "fetch"
-        },
-        body: params.toString()
+        body: formData
     });
 
     if (!res.ok) {
@@ -46,8 +52,6 @@ export const submitForm = async (form, files) => {
     }
 
     const data = await res.json();
-
-    // Frappe wraps its response in a `message` key
     const result = data.message || data;
 
     if (!result.success) {
@@ -55,4 +59,18 @@ export const submitForm = async (form, files) => {
     }
 
     return result;
+};
+
+/**
+ * Backward-compatible submitForm for ITR sections.
+ */
+export const submitForm = async (form, files) => {
+    if (form.account_type) {
+        form.account_type = form.account_type.charAt(0).toUpperCase() + form.account_type.slice(1).toLowerCase();
+        if (form.account_type.toUpperCase() === "HUF") {
+            form.account_type = "HUF";
+        }
+    }
+
+    return submitServiceForm(form, files);
 };
